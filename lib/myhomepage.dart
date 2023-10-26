@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image(image: assets/images/passimg.JPG),
+            // child: Image(image: assets/images/passimg.JPG),
           ),
           // AssetImage("assets/images/passimg.JPG"),
           Padding(
@@ -39,10 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(20.0),
             child: TextFormField(
                   decoration: InputDecoration(
-                    
+                 
                     prefixIcon: Icon(Icons.lock),
             labelText:"password", 
-            hintText: "inter your password"
+            hintText: "inter your password",
+            border: OutlineInputBorder()
+            
                   ),
               obscureText: true,
               onChanged: (value){password=value;},
