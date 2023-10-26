@@ -16,16 +16,30 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Form(
         key: _formkey, child: Column(
         children: [
-          TextFormField(
-            onChanged: (value){email=value;},
-            validator:(value){
-              if(value!.isEmpty){return "email cannot be empty";}
-            },
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                hintText: "Email",
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (value){email=value;},
+              validator:(value){
+                if(value!.isEmpty){return "email cannot be empty";}
+              },
+            ),
           ),
           TextFormField(
+        decoration: InputDecoration(
+          labelText:"password", 
+        ),
+            obscureText: true,
             onChanged: (value){password=value;},
             validator:(value){
               if(value!.isEmpty){return "Password cannot be empty";}
+              if(value.length<6){
+                return "password should have atleast 6 digits";
+              }
             },
           ),
           ElevatedButton(onPressed: (){if(
